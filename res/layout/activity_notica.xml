@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <Button
+        android:id="@+id/notification1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="一个简单的Demo"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/notification2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Notification 简单 Demo"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/notification3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Notification 提示形式"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/notification4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Notification 样式"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/notification5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TaskStackBuilder 简单测试"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/notification6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="启动 NotificationListenerService"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+
+</LinearLayout>

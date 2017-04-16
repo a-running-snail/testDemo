@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CircleImageActivity"
+            />
+
+        <Button
+            android:id="@+id/activity2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activity2"
+            />
+
+        <Button
+            android:id="@+id/priorityActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Glide 设置加载优先级"
+            />
+
+        <Button
+            android:id="@+id/thumbnailActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="缩略图的支持"
+            />
+
+        <Button
+            android:id="@+id/gifActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gif的支持"
+            />
+
+        <Button
+            android:id="@+id/videoActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="视频的支持"
+            />
+
+        <Button
+            android:id="@+id/glideModuleActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义缓存目录"
+            />
+
+
+
+    </LinearLayout>
+</RelativeLayout>
