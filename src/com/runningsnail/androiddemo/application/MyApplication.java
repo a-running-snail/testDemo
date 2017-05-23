@@ -2,10 +2,13 @@ package com.runningsnail.androiddemo.application;
 
 import java.io.File;
 
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
+import com.iflytek.mscv5plusdemo.SpeechApp;
 import com.runningsnail.androiddemo.crash.CrashHandler;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.watcher.RefWatcher;
-
+import com.runningsnail.androiddemo.R;
 import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
@@ -20,6 +23,12 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+		StringBuffer param = new StringBuffer();
+		param.append("appid="+getString(R.string.app_id));
+		param.append(",");
+		// 设置使用v5+
+		param.append(SpeechConstant.ENGINE_MODE+"="+SpeechConstant.MODE_MSC);
+		SpeechUtility.createUtility(MyApplication.this, param.toString());
 		refWatcher = LeakCanary.install(this);
 		File file = new File(PICPATH);
 	    if(!file.exists()){
@@ -27,7 +36,7 @@ public class MyApplication extends Application {
 	    }
 	    if (DEBUG) {
 			CrashHandler crashHandler = CrashHandler.getInstance();
-			// ע��crashHandler
+			// ע��crashHandler
 			crashHandler.init(getApplicationContext());
 		}
 	}

@@ -4,14 +4,13 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk 
+    <uses-sdk
         android:minSdkVersion="13"
         android:targetSdkVersion="22" />
 
-    
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,11 +21,16 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <!--VISIBILITY_HIDDEN表示不显示任何通知栏提示的权限-->
-    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
-    <!--DownloadManager-->
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- VISIBILITY_HIDDEN表示不显示任何通知栏提示的权限 -->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <!-- DownloadManager -->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
     <!-- 蓝牙分享所需的权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -54,7 +58,7 @@
             <!--
             	AuthorizeAdapter表示一个继承自cn.sharesdk.framework.authorize.AuthorizeAdapter
             	的类，这个类可以监听到页面的生命周期，也可以获取授权页面的各种UI控件。 
-            	开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            	开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
             -->
             <meta-data
                 android:name="AuthorizeAdapter"
@@ -65,13 +69,13 @@
             	的类，这个类可以监听到页面的生命周期，也可以获QQ空间网页分享权页面的各种UI控件。 
             	开发者可以通过继承QZoneWebShareAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
             <meta-data android:name="QZoneWebShareAdapter" android:value="cn.sharesdk.demo.MyQZoneWebShareAdapter" />
-            <meta-data android:name="QQWebShareAdapter" android:value="cn.sharesdk.demo.MyQQWebShareAdapter" />
+            <meta-data android:name="QQWebShareAdapter" android:value="cn.sharesdk.demo.MyQQWebShareAdapter" />
             -->
 
 
             <!--
             	Dropbox的SSO功能需要在此处添加一个对ACTION_VIEW事件的过滤器，其中的scheme是
-            	“db-”前缀再开发者应用的加上appKey。如果此过滤器不设置，则不能完成SSO功能授权
+            	“db-”前缀再开发者应用的加上appKey。如果此过滤器不设置，则不能完成SSO功能授权
             -->
             <intent-filter>
                 <data android:scheme="db-7janx53ilz11gbs" />
@@ -203,17 +207,9 @@
         <activity
             android:name="com.runningsnail.androiddemo.sharesdk.SharesdkActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-        <activity
-            android:name="com.runningsnail.androiddemo.sharesdk.DerectShareWithEditActivity"
-             />
-        <activity
-            android:name="com.runningsnail.androiddemo.sharesdk.DerectShareWithoutEditActivity"
-             />
-        
-        
-        
-         <activity android:name="com.runningsnail.androiddemo.notification.NotificationActivity">
-            
+        <activity android:name="com.runningsnail.androiddemo.sharesdk.DerectShareWithEditActivity" />
+        <activity android:name="com.runningsnail.androiddemo.sharesdk.DerectShareWithoutEditActivity" />
+        <activity android:name="com.runningsnail.androiddemo.notification.NotificationActivity" >
         </activity>
         <activity android:name="com.runningsnail.androiddemo.notification.SimpleNotificationActivity" />
         <activity android:name="com.runningsnail.androiddemo.notification.NotificationPriorityActivity" />
@@ -221,7 +217,7 @@
         <!-- parentActivityName 属性用于点击 Notification 跳转到 Activity 按返回键时返回的界面 -->
         <activity
             android:name="com.runningsnail.androiddemo.notification.NormalResultActivity"
-            android:parentActivityName="com.runningsnail.androiddemo.notification.NotificationActivity">
+            android:parentActivityName="com.runningsnail.androiddemo.notification.NotificationActivity" >
 
             <!-- 兼容 Android 4.0.3 及更早的版本 -->
             <meta-data
@@ -238,176 +234,214 @@
         <activity android:name="com.runningsnail.androiddemo.notification.NotificationEffectActivity" />
         <activity android:name="com.runningsnail.androiddemo.notification.SimplestNotificationActivity" />
         <activity android:name="com.runningsnail.androiddemo.notification.NotificationStyleActivity" />
-        <activity android:name="com.runningsnail.androiddemo.notification.NotificationListenerServiceActivity"></activity>
+        <activity android:name="com.runningsnail.androiddemo.notification.NotificationListenerServiceActivity" >
+        </activity>
 
         <service
             android:name="com.runningsnail.androiddemo.notification.MyNotificationListenerService"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
-        
-        
+
         <activity
             android:name="com.runningsnail.androiddemo.lock.SettingLock"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.lock.LockActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.lock.LockTestActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.surfaceview.SurfaceViewActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.twod.TwoDRotate"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.view.MyViewActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.view.ChildActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.contentprovoder.ProviderActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <provider 
-              android:name="com.runningsnail.androiddemo.contentprovoder.MyProvider"
-              android:exported="true"
-              android:authorities="com.runningsnail.androiddemo.cp"
-              />
-          
-          
-          <activity
+
+        <provider
+            android:name="com.runningsnail.androiddemo.contentprovoder.MyProvider"
+            android:authorities="com.runningsnail.androiddemo.cp"
+            android:exported="true" />
+
+        <activity
             android:name="com.runningsnail.androiddemo.anim.AnimActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.anim.ShowProperty"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.DingZhi"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.LayoutAnimaActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.ViewAnimateActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
-
         <activity
             android:name="com.runningsnail.androiddemo.anim.ShowTween"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.ShowMain"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.AllTween"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.ShowDrawableAnim"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.TestInterpolator"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
         <activity
             android:name="com.runningsnail.androiddemo.anim.ShowExample"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
-
         </activity>
-        
-        
         <activity
             android:name="com.runningsnail.androiddemo.contacts.ContactActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.runningsnail.androiddemo.tulingrobot.RobotActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-        
-         <activity
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name="com.runningsnail.androiddemo.slitemenu.SliteActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         
-         
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.guaguale.GuaguaActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.downloadmanage.DownloadActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.dialog.DialogActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.wheel.CitiesActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-         <activity
+        <activity
             android:name="com.runningsnail.androiddemo.banner.BannerActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-          <activity
+        <activity
             android:name="com.runningsnail.androiddemo.windowmanager.FloatActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <service
-            android:name="com.runningsnail.androiddemo.windowmanager.FloatWindowService"
-             />
-           
-           
-           
-           <activity
+
+        <service android:name="com.runningsnail.androiddemo.windowmanager.FloatWindowService" />
+
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:icon="@drawable/icon"
+            android:label="讯飞语音示例v5+"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.iflytek.speech.setting.TtsSettings"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity android:name="com.iflytek.speech.setting.IatSettings"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity android:name="com.iflytek.speech.setting.UnderstanderSettings"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.IatDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.AsrDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.UnderstanderDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.TtsDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.IvwActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.WakeDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.mscv5plusdemo.OneShotDemo"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.runningsnail.androiddemo.glide.GlideActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.CircleImageActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.Activity2"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.PriorityActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.ThumbnailActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.GifActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <activity
+        <activity
             android:name="com.runningsnail.androiddemo.glide.VideoActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
-           <!--  声明 glidemodule -->
+        <!-- 声明 glidemodule -->
         <meta-data
             android:name="com.runningsnail.androiddemo.glide.SimpleGlideModule"
             android:value="GlideModule" />

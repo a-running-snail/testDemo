@@ -54,7 +54,7 @@ public class MenuRightFragment extends Fragment {
 					"photoview","Fastgson","ActionbarSherlock","Eventbus","Sharesdk",
 					"notification","lock","surfaceView","2d rotate","myview","contentprovider"
 					,"anim","contact","robot","slitemenu","guaguaka","down","dialog"
-					,"wheel","banner","float","glide");
+					,"wheel","banner","float","glide","ifly");
 	private ListAdapter mAdapter;
 
 	@Override
@@ -160,6 +160,10 @@ public class MenuRightFragment extends Fragment {
 					break;
 				case 25:
 					startActivity(new Intent(getActivity(), GlideActivity.class));
+					getActivity().finish();
+					break;
+				case 26:
+					startActivity(new Intent(getActivity(), com.iflytek.mscv5plusdemo.MainActivity.class));
 					getActivity().finish();
 					break;
 				default:
