@@ -86,12 +86,10 @@ public class TtsDemo extends Activity implements OnClickListener {
 	 */
 	private void initLayout() {
 		findViewById(R.id.tts_play).setOnClickListener(this);
-		
 		findViewById(R.id.tts_cancel).setOnClickListener(this);
 		findViewById(R.id.tts_pause).setOnClickListener(this);
 		findViewById(R.id.tts_resume).setOnClickListener(this);
 		findViewById(R.id.image_tts_set).setOnClickListener(this);
-
 		findViewById(R.id.tts_btn_person_select).setOnClickListener(this);
 		
 		mRadioGroup=((RadioGroup) findViewById(R.id.tts_rediogroup));
