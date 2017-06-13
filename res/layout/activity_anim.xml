@@ -57,6 +57,11 @@
         android:layout_below="@id/tweendrawableanim"
 
         android:text="property动画" />
+		
+		
+		
+		
+		
     <Button
         android:id="@+id/propertydef"
         android:layout_width="wrap_content"
